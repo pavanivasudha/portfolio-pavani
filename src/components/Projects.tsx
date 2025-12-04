@@ -32,8 +32,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       title: "MIRA",
       description:
         "MIRA leverages AI, RPA, and cutting-edge Python technology to automate clinical and administrative workflows, enabling healthcare professionals to focus on what matters most—patient care.",
-      image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Fmicrosofts-revolutionary-diagnostic-medical-ai-explained%2F&psig=AOvVaw0TH_wm-Z37xDmOeuD9gDht&ust=1764951956426000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDt4c2spJEDFQAAAAAdAAAAABAE?auto=compress&cs=tinysrgb&w=800",
+      image: "/images/mira.jpg",
       technologies: ["Java script", "css", "React", "html"],
       category: "fullstack",
       github: "https://github.com/pavanivasudha/mira2",
@@ -49,8 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       title: "Food Analysis",
       description:
         "A web application that analyzes food images to provide nutritional information and health insights.",
-      image:
-        "https://www.google.com/imgres?q=Food%20Analysis%20ai&imgurl=https%3A%2F%2Fporfiro.co%2Fwp-content%2Fuploads%2F2025%2F05%2FAnalysis-of-Nutritional-Data-in-AI-1024x573.jpg&imgrefurl=https%3A%2F%2Fporfiro.co%2Fartificial-intelligence-ai-and-its-application-in-nutri%2F&docid=aXusglBqm4cPFM&tbnid=JHA1CQZs8GrmfM&vet=12ahUKEwjTlbKCraSRAxWRxjgGHcy9OWEQM3oECC4QAA..i&w=1024&h=573&hcb=2&ved=2ahUKEwjTlbKCraSRAxWRxjgGHcy9OWEQM3oECC4QAA?auto=compress&cs=tinysrgb&w=800",
+      image: "/images/food.jpg",
       technologies: [
         "Vite",
         "Typescript",
@@ -158,6 +156,12 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = "https://via.placeholder.com/800x600?text=Image+Unavailable";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                   <div className="flex space-x-3">
