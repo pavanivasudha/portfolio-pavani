@@ -1,114 +1,89 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Filter } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Filter } from "lucide-react";
 
 interface ProjectsProps {
   darkMode: boolean;
 }
 
 const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
 
   const projects = [
     {
-      title: 'Rent-a-Car Application',
-      description: 'A complete microservices-based car rental platform with payment, booking, and vehicle management modules.',
-      image: 'https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Spring Boot', 'MongoDB', 'PostgreSQL', 'Redis', 'JWT', 'Docker'],
-      category: 'fullstack',
-      github: 'https://github.com/DineshGandham/rent-a-car',
-      live: '',
+      title: "Library Management Application",
+      description:
+        "A frontend application to manage book inventory, members, and issuing flow.",
+      image:
+        "https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["TypeScript", "React", "Tailwind CSS"],
+      category: "frontend",
+      github: "https://github.com/pavanivasudha/Library-management",
+      live: "",
       features: [
-        'Microservice architecture with Eureka and API Gateway',
-        'JWT authentication and role-based access control',
-        'Car search, booking flow, and payment integration',
-        'MongoDB for users, PostgreSQL for booking, Redis for cache',
-        'Responsive frontend built in React with Redux Toolkit'
-      ]
+        "Add/edit/delete books and member records",
+        "Dynamic form handling with React hooks",
+        "Styled UI with Tailwind CSS",
+        "Validation using custom rules",
+        "Clean separation of UI and logic",
+      ],
     },
     {
-      title: 'Library Management Application',
-      description: 'A frontend application to manage book inventory, members, and issuing flow.',
-      image: 'https://images.pexels.com/photos/256559/pexels-photo-256559.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['TypeScript', 'React', 'Tailwind CSS'],
-      category: 'frontend',
-      github: 'https://github.com/DineshGandham/Library-application',
-      live: '',
+      title: "MIRA",
+      description:
+        "MIRA leverages AI, RPA, and cutting-edge Python technology to automate clinical and administrative workflows, enabling healthcare professionals to focus on what matters most—patient care.",
+      image:
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Fmicrosofts-revolutionary-diagnostic-medical-ai-explained%2F&psig=AOvVaw0TH_wm-Z37xDmOeuD9gDht&ust=1764951956426000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDt4c2spJEDFQAAAAAdAAAAABAE?auto=compress&cs=tinysrgb&w=800",
+      technologies: ["Java script", "css", "React", "html"],
+      category: "fullstack",
+      github: "https://github.com/pavanivasudha/mira2",
+      live: "",
       features: [
-        'Add/edit/delete books and member records',
-        'Dynamic form handling with React hooks',
-        'Styled UI with Tailwind CSS',
-        'Validation using custom rules',
-        'Clean separation of UI and logic'
-      ]
+        "Create, read, update, delete user profiles",
+        "MongoDB schema with Mongoose",
+        "React forms and validations",
+        "Modular codebase",
+      ],
     },
     {
-      title: 'DSA by Dinesh',
-      description: 'A personal repository of data structure and algorithm problems solved in Java.',
-      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Java'],
-      category: 'backend',
-      github: 'https://github.com/DineshGandham/dsa-by-dinesh',
-      live: '',
+      title: "Food Analysis",
+      description:
+        "A web application that analyzes food images to provide nutritional information and health insights.",
+      image:
+        "https://www.google.com/imgres?q=Food%20Analysis%20ai&imgurl=https%3A%2F%2Fporfiro.co%2Fwp-content%2Fuploads%2F2025%2F05%2FAnalysis-of-Nutritional-Data-in-AI-1024x573.jpg&imgrefurl=https%3A%2F%2Fporfiro.co%2Fartificial-intelligence-ai-and-its-application-in-nutri%2F&docid=aXusglBqm4cPFM&tbnid=JHA1CQZs8GrmfM&vet=12ahUKEwjTlbKCraSRAxWRxjgGHcy9OWEQM3oECC4QAA..i&w=1024&h=573&hcb=2&ved=2ahUKEwjTlbKCraSRAxWRxjgGHcy9OWEQM3oECC4QAA?auto=compress&cs=tinysrgb&w=800",
+      technologies: [
+        "Vite",
+        "Typescript",
+        "React",
+        "Tailwind CSS",
+        "shadcn-ui",
+      ],
+      category: "fullstack",
+      github: "https://github.com/pavanivasudha/fuel-snap-analyzer",
+      live: "",
       features: [
-        '100+ DSA problems with optimized Java solutions',
-        'Topics include arrays, trees, recursion, graphs, etc.',
-        'Clean and readable solution structure',
-        'Ideal for interview preparation',
-        'Continuously updated content'
-      ]
+        "Create, read, update, delete user profiles",
+        "Fetching Data from third-party APIs using n8n WorkFlows",
+        "React forms and validations",
+        "Modular codebase",
+      ],
     },
-    {
-      title: 'CRUD MERN App',
-      description: 'A basic MERN stack app for managing user records.',
-      image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
-      category: 'fullstack',
-      github: 'https://github.com/DineshGandham/CRUD_MERN',
-      live: '',
-      features: [
-        'Create, read, update, delete user profiles',
-        'Express REST API integration',
-        'MongoDB schema with Mongoose',
-        'React forms and validations',
-        'Modular codebase'
-      ]
-    },
-    {
-      title: 'CRUD with Next.js',
-      description: 'Simple CRUD interface built using Next.js with TypeScript.',
-      image: 'https://images.pexels.com/photos/1809340/pexels-photo-1809340.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      category: 'frontend',
-      github: 'https://github.com/DineshGandham/CRUD_NEXTJS',
-      live: '',
-      features: [
-        'Basic CRUD operations with dynamic routing',
-        'API routes for backend logic',
-        'Type-safe props and components',
-        'Reusable form components',
-        'Clean UI with Tailwind CSS'
-      ]
-    }
   ];
-  
-  
 
   const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'fullstack', label: 'Full Stack' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' }
+    { id: "all", label: "All Projects" },
+    { id: "fullstack", label: "Full Stack" },
+    { id: "frontend", label: "Frontend" },
+    { id: "backend", label: "Backend" },
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section className={`py-20 ${
-      darkMode ? 'bg-gray-900' : 'bg-white'
-    }`}>
+    <section className={`py-20 ${darkMode ? "bg-gray-900" : "bg-white"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -118,10 +93,14 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            Featured{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A showcase of my recent work demonstrating various technologies and problem-solving approaches.
+            A showcase of my recent work demonstrating various technologies and
+            problem-solving approaches.
           </p>
         </motion.div>
 
@@ -141,10 +120,10 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
               whileTap={{ scale: 0.95 }}
               className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                 activeFilter === filter.id
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                   : darkMode
-                  ? 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
               <Filter size={16} />
@@ -168,9 +147,9 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
               className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 ${
-                darkMode 
-                  ? 'bg-gray-800 hover:shadow-2xl' 
-                  : 'bg-white hover:shadow-2xl'
+                darkMode
+                  ? "bg-gray-800 hover:shadow-2xl"
+                  : "bg-white hover:shadow-2xl"
               }`}
             >
               {/* Project Image */}
@@ -193,16 +172,16 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                       <Github size={20} />
                     </motion.a>
                     {project.live && (
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors duration-200"
-                    >
-                      <ExternalLink size={20} />
-                    </motion.a>
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors duration-200"
+                      >
+                        <ExternalLink size={20} />
+                      </motion.a>
                     )}
                   </div>
                 </div>
@@ -222,8 +201,8 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                       key={i}
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                         darkMode
-                          ? 'bg-gray-700 text-gray-300'
-                          : 'bg-gray-100 text-gray-700'
+                          ? "bg-gray-700 text-gray-300"
+                          : "bg-gray-100 text-gray-700"
                       }`}
                     >
                       {tech}
@@ -236,7 +215,10 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                   <h4 className="font-semibold mb-2 text-sm">Key Features:</h4>
                   <ul className="space-y-1">
                     {project.features.slice(0, 3).map((feature, i) => (
-                      <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start">
+                      <li
+                        key={i}
+                        className="text-xs text-gray-600 dark:text-gray-400 flex items-start"
+                      >
                         <span className="text-blue-600 mr-2">•</span>
                         {feature}
                       </li>
@@ -254,14 +236,14 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                     whileTap={{ scale: 0.95 }}
                     className={`flex-1 flex items-center justify-center space-x-2 py-2 px-4 rounded-lg font-medium transition-colors duration-200 ${
                       darkMode
-                        ? 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >
                     <Github size={16} />
                     <span>Code</span>
                   </motion.a>
-                  
+
                   <motion.a
                     href={project.live}
                     target="_blank"
@@ -278,7 +260,6 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

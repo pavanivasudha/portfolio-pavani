@@ -34,8 +34,8 @@ const Header: React.FC<HeaderProps> = ({
 
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/Pavani_vasudha_FullStack_Resume.pdf";
-    link.download = "Pavani_vasudha_FullStack_Resume.pdf";
+    link.href = "/PavanivasudhaResume_Fullstackdeveloper.pdf";
+    link.download = "PavanivasudhaResume_Fullstackdeveloper.pdf";
     link.click();
   };
 

@@ -66,8 +66,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 transition={{ delay: 0.6, duration: 0.8 }}
                 className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl whitespace-pre-line"
               >
-                {`I'm a Full Stack Engineer with 3.5+ years of experience building scalable, high-performance web applications.  
-I specialize in Java, Spring Boot, React.js, and Node.js—developing robust backends and responsive frontends for real-world impact.  
+                {`I'm a Full Stack Engineer with 2.7+ years of experience building scalable, high-performance web applications.  
+I specialize in Python,Vue.js, React.js, and Node.js , PHP —developing robust backends and responsive frontends for real-world impact.  
 With strong expertise in MongoDB, PostgreSQL, RESTful APIs, and AWS, I deliver end-to-end solutions that are secure, maintainable, and cloud-ready.  
 Driven by a passion for clean code and Agile collaboration, I thrive on solving complex problems that make a difference.`}
               </motion.p>
